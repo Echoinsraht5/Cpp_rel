@@ -35,14 +35,19 @@ int main()
     // }
 
 
-    int grade;
-    cin >> grade;
-    if (grade >= 85) cout << 'A' << endl;
-    else if (grade >= 70) cout << 'B' << endl;
-    else if (grade >= 60) cout << 'C' << endl;
-    else cout << 'D' << endl;
+    // int grade;
+    // cin >> grade;
+    // if (grade >= 85) cout << 'A' << endl;
+    // else if (grade >= 70) cout << 'B' << endl;
+    // else if (grade >= 60) cout << 'C' << endl;
+    // else cout << 'D' << endl;
+
+
+    int a;
+    cin >> a;
+    if (a % 400 == 0 || a % 100 != 0 && a % 4 == 0) cout << "yes" << endl;
+    else cout << "no" << endl;
 
     return 0;
-
-
+    
 }
