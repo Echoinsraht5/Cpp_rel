@@ -152,38 +152,38 @@ int main ()
 
 
 
-// // 725. 完全数
+// 719. 连续奇数的和 2
 
-// 一个整数，除了本身以外的其他所有约数的和如果等于该数，那么我们就称这个整数为完全数。
-
-// 例如，6 就是一个完全数，因为它的除了本身以外的其他约数的和为 1+2+3=6。
-
-// 现在，给定你 N 个整数，请你依次判断这些数是否是完全数。
+// 输入 N 对整数对 X,Y，对于每对 X,Y，请你求出它们之间（不包括 X 和 Y）的所有奇数的和。
 
 // 输入格式
-// 第一行包含整数 N，表示共有 N 个测试用例。
+// 第一行输入整数 N，表示共有 N 对测试数据。
 
-// 接下来 N 行，每行包含一个需要你进行判断的整数 X。
+// 接下来 N 行，每行输入一组整数 X 和 Y。
 
 // 输出格式
-// 每个测试用例输出一个结果，每个结果占一行。
-
-// 如果测试数据是完全数，则输出 X is perfect，其中 X 是测试数据。
-
-// 如果测试数据不是完全数，则输出 X is not perfect，其中 X 是测试数据。
+// 每对 X,Y 输出一个占一行的奇数和。
 
 // 数据范围
 // 1≤N≤100,
-// 1≤X≤108
+// −1000≤X,Y≤1000
 // 输入样例：
-// 3
-// 6
-// 5
-// 28
+// 7
+// 4 5
+// 13 10
+// 6 4
+// 3 3
+// 3 5
+// 3 4
+// 3 8
 // 输出样例：
-// 6 is perfect
-// 5 is not perfect
-// 28 is perfect
+// 0
+// 11
+// 5
+// 0
+// 0
+// 0
+// 12
 
 
 /* Code v1
@@ -236,7 +236,7 @@ int main()
         if (x > y) swap(x, y);
         
         int res = 0;
-        for (int i = x + 1 ; i < y; i ++ )
+        for (int i = ++ x; i < y; i ++ )
             if (i % 2) res += i;
         cout << res << endl;
 
@@ -245,6 +245,7 @@ int main()
     return 0;
 }
 */
+
 
 
 // 725. 完全数
@@ -281,9 +282,103 @@ int main()
 // 28 is perfect
 
 
-/* code
+/* Code v1
 
+#include<iostream>
 
+using namespace std;
 
-
+int main()
+{
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i ++ )
+    {
+        int x;
+        cin >> x;
+        if (x == 1 || x == 2) printf("%d is not perfect", x);
+        // bool is_prime = true;
+        for (int j = 2, res = 0; j < x; j ++ )
+        {
+            if (x % j == 0)
+            {
+                // is_prime = false;
+                // printf("%d is not prime", x);
+                for (int k = 2, l; k < x; k ++)
+                    {
+                        cout << l << endl;
+                        if (k * l == x) res += k;// cout << k << ' ';
+                    }
+                int res2 = res + 1;
+                // cout << res2 << ' ';
+                if (res2 == x) printf("%d is perfect", x);
+                else printf("%d is not perfect", x);
+                break;
+            }
+            else printf("%d is not perfect", x);
+            break;
+        }
+        // if (is_prime) printf("%d is not perfect", x);
+        cout << endl;
+    }
+    return 0;
+}
 */
+
+
+/* code v2
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    while (n -- )
+    {
+        int x;
+        cin >> x;
+        int res = 0;
+        for (int i = 1; i * i < x; i ++ )
+            if (x % i ==0)
+            {
+                if (i < x) res += i;
+                if (i != x / i && x / i < x) res += x / i;
+            }
+        if (res == x) printf("%d is perfect", x);
+        else printf("%d is not perfect", x);
+        cout << endl;
+    }
+    return 0;
+}
+*/
+
+
+
+// 菱形
+
+/* code 曼哈顿距离
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int cx = n / 2, cy = n / 2;
+    for (int i = 0; i < n; i ++ )
+    {
+        for (int j = 0; j < n; j ++ )
+            if (abs(i - cx) + abs(j - cy) <= n / 2)
+                cout << '*' ;
+            else 
+                cout << ' ' ;
+        cout << endl;
+    }
+    return 0;
+}
+*/ 
