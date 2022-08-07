@@ -149,8 +149,9 @@ int main()
 
     // 菱形
    
-    char n = getchar();
-    cout << n;
+    int n;
+    cin >> n;
+    
     
     int cx = n / 2, cy = n / 2;
     for (int i = 0; i < n; i ++ )
