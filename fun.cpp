@@ -7,20 +7,44 @@ using namespace std;
 int main()
 {
     // system("chcp 65001");
-    printf("è¯·è¾“å…¥æ•°å­—n(å¥‡æ•°ä¸”æœ€å¥½>5å“¦): ");
+    printf("ÇëÊäÈëÊı×Ön(ÆæÊıÇÒ×îºÃ>5Å¶): ");
     int n;
     cin >> n;
     // cout << n << endl;
-    int sx = n / 2, sy = n / 2;
 
-    for (int i = 0 ,j = 0; i < n ; i ++ )
+    int cx = n / 2, cy = n / 2;
+    for (int i = 0; i < n; i ++ )
     {
         for (int j = 0; j < n; j ++ )
+            if (abs(i - cx) + abs(j - cy) == n / 2)
+                cout << '*' ;
+            else 
+                cout << ' ' ;
+        cout << endl;
+    }
+
+    cout << endl;
+
+     for (int l1 = 0; l1 < n; l1 ++ )
+    {
+        for (int l2 = 0; l2 < n; l2 ++ )
+            if (abs(l1 - cx) + abs(l2 - cy) <= n / 2)
+                cout << '*' ;
+            else 
+                cout << ' ' ;
+        cout << endl;
+    }
+
+    cout << endl;
+  
+    for (int m1 = 0 ; m1 < n ; m1 ++ )
+    {
+        for (int m2 = 0; m2 < n; m2 ++ )
         {
             bool is_not_k = true;
             for (int k = 1; k <= n / 2; k += 2 )
             {    
-                if (abs(sx - i) + abs(sy - j) == k )
+                if (abs(m1 - cx) + abs(m2 - cy) == k )
                 {
                     is_not_k = false;
                     break;
@@ -32,7 +56,7 @@ int main()
         cout << endl;    
     }
 
-    printf("â†“æŒ‰ä¸‹ä»»æ„é”®é€€å‡ºâ†“\n");
+    printf("¡ı°´ÏÂÈÎÒâ¼üÍË³ö¡ı\n");
     system("pause");
 
 }

@@ -23,6 +23,10 @@
     "code-runner.executorMap": {
         "cpp": "cd $dir && g++ $fileName -o E:/VScode_cpp/exe/$fileNameWithoutExt && E:/VScode_cpp/exe/$fileNameWithoutExt",
     },
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp"
+    },
     // "files.encoding": "gbk",
     
 }
