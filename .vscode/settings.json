@@ -1,7 +1,28 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "random": "cpp",
-        "ostream": "cpp"
-    }
+    "editor.fontSize": 18,
+    "git.suggestSmartCommit": false,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#9155FD",
+        "statusBar.noFolderBackground": "#73cfa8",
+        "statusBar.debuggingBackground": "#73cfa8",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
+    },
+    "workbench.colorTheme": "Monokai",
+    "gitlens.views.branches.branches.layout": "list",
+    "gitlens.advanced.messages": {
+        "suppressCreatePullRequestPrompt": true
+    },
+    "gitlens.views.remotes.branches.layout": "list",
+    "explorer.confirmDelete": false,
+    
+    "editor.codeActionsOnSave": {
+    
+    
+    },
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ $fileName -o E:/VScode_cpp/exe/$fileNameWithoutExt && E:/VScode_cpp/exe/$fileNameWithoutExt",
+    },
+    // "files.encoding": "gbk",
+    
 }
