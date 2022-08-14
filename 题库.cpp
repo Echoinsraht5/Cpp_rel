@@ -503,9 +503,9 @@ int main()
     for (int i = 0; i < 12; i ++ )
         for (int j = 0; j < 12; j ++ ) 
         {
+            scanf("%lf", &a[i][j]);
             b1 ++ ;
             res1 += a[i][j];
-            scanf("%lf", &a[i][j]);
         }
     
     
@@ -590,3 +590,7 @@ int main()
 }
 */
 // 左下半部分同右下半部分一样，用总和减右上半部分即可
+
+
+
+// 
